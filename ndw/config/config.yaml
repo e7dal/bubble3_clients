@@ -1,0 +1,19 @@
+---
+CFG:
+    BUBBLE:
+        DEBUG: True
+        VERBOSE: True
+        STORAGE_TYPE: jsonl
+    DEV:
+        SOURCE:    #pull
+            CLIENT: ./ndw_client.py
+            NDW_URL: http://opendata.ndw.nu
+            GZIP_FILE: brugopeningen.xml.gz
+            PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+            PAYLOAD_DATA_KEY: 'situation'
+        TRANSFORM:
+            RULES: config/rules.bubble
+        TARGET:    #push
+            CLIENT: ./mytgtclient.py
+...
+#please see bubble/docs/configuration
