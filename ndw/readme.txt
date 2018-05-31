@@ -30,3 +30,5 @@ todo:
 - make installable like example in:
 - https://github.com/e7dal/bubble3/tree/master/demo_client/mydumboclient_site_packages.mydumboclient
 - let someone with actual datex2 knowledge check correctness.
+
+- technical ndw documentation http://www.ndw.nu/documenten/nl/#cat_3
