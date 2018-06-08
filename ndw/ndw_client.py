@@ -16,9 +16,11 @@ class BubbleClient(Bubble):
         print(cfg)
     def pull(self, amount='all', index=0):
         if amount=='all':
-            all=True
+            all_items=True
             self.say('BC: pulling all')
+            sl=False
         else:
+            all_items=False
             sl=slice(index,index+amount)
             self.say('BC: %d,%d'%(amount,index))
         data=self.read_gzipped_xml_from_url(self.CFG.NDW_URL,
@@ -26,9 +28,10 @@ class BubbleClient(Bubble):
                                             self.CFG.PAYLOAD_DEEP_KEYS)
         #print(data.keys)
         ci=0
-        for d in data[self.CFG.PAYLOAD_DATA_KEY]:
-           if all or ci in sl:
+        for d in self.deep_key_content(data,self.CFG.PAYLOAD_DATA_KEY):
+           if all_items or ci in sl:
                 yield d
+                ci+=1
 
     def deep_key_content(self,data={},deep_key=payload_key):
         try:
@@ -40,6 +43,9 @@ class BubbleClient(Bubble):
                     print(curr.keys())
 
             self.say('found:'+deep_key)
+            if type(curr)==list:
+                self.say('type=listi len=%d'%len(curr))
+                return curr
             for k in curr.keys():
                 print(k,type(curr[k]))
             return curr
