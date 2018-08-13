@@ -32,3 +32,64 @@ todo:
 - let someone with actual datex2 knowledge check correctness.
 
 - technical ndw documentation http://www.ndw.nu/documenten/nl/#cat_3
+
+
+
+Example bits of configuration for all the gzip files:
+
+GZIP_FILE: actuele_statusberichten.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'situation'
+
+GZIP_FILE: brugopeningen.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'situation'
+
+GZIP_FILE: DRIPS.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'vmsUnit'
+
+GZIP_FILE: gebeurtenisinfo.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'situation'
+
+GZIP_FILE: incidents.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'situation'
+
+GZIP_FILE: LocatietabelDRIPS.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication.vmsUnitTable'
+PAYLOAD_DATA_KEY: 'vmsUnitRecord'
+
+GZIP_FILE: Matrixsignaalinformatie.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.ndw:NdwVms.variable_message_sign_events'
+PAYLOAD_DATA_KEY: 'event'
+
+GZIP_FILE: measurement_current.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'measurementSiteTable.measurementSiteRecord'
+
+GZIP_FILE: measurement.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'measurementSiteTable.measurementSiteRecord'
+
+GZIP_FILE: Ongevalideerde_snelheden_en_Intensiteiten.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.ndw:NdwMrm.minute_speed_and_flow_events'
+PAYLOAD_DATA_KEY: 'event'
+
+GZIP_FILE: srti.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'situation'
+
+GZIP_FILE: trafficspeed.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication.siteMeasurements'
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'siteMeasurements'
+
+GZIP_FILE: traveltime.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'siteMeasurements'
+            
+GZIP_FILE: wegwerkzaamheden.xml.gz
+PAYLOAD_DEEP_KEYS: 'SOAP:Envelope.SOAP:Body.d2LogicalModel.payloadPublication'
+PAYLOAD_DATA_KEY: 'situation'
