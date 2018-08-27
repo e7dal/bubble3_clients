@@ -1,0 +1,11 @@
+---
+CFG:
+    BUBBLE:
+        DEBUG: True
+        VERBOSE: True
+        STORAGE_TYPE: jsonl
+    DEV:
+        SOURCE:    #pull
+            CLIENT: ./knmi_warnings_client.py
+            WARNINGS_RSS_URL: 'http://projects.knmi.nl/RSSread/rss_KNMIwaarschuwingen.php'
+...
